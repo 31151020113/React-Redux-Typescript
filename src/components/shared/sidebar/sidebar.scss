@@ -1,0 +1,31 @@
+#side-bar {
+  margin-top: 2rem;
+  .form-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .background-image {
+      background-image: url("");
+      position: absolute;
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .backdrop {
+      position: absolute;
+      width: 100%;
+      //max-width: 600px;
+      height: 100%;
+      margin: auto;
+      background-color: #000;
+      opacity: 0.6;
+    }
+  }
+}
