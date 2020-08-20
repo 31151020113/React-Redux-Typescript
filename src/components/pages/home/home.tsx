@@ -2,19 +2,17 @@ import React from "react";
 import "./home.scss";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { AppState } from "../../../redux";
-import { LoginReq } from "../../../models/req/login-req";
 import actions from "../../../redux/home/actions";
 import operations from "../../../redux/home/operations";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
+import { RootState } from "../../../store";
 
 interface Props {}
 
 const HomePage: React.FC<Props> = (props) => {
-  const loginReq = useSelector<AppState, LoginReq>(
-    (state) => state.home.loginReq
-  );
+  const homeState = (state: RootState) => state.home;
+  const loginReq = useSelector(homeState).loginReq;
   const dispatch = useDispatch();
-  const {} = props;
 
   const handleChange = (event: any) => {
     const { value, name } = event.target;
@@ -23,10 +21,14 @@ const HomePage: React.FC<Props> = (props) => {
     dispatch(actions.onChangeFormLogin(newModel));
   };
 
+  const { width, height } = useWindowDimensions();
+
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-12">Home Page</div>
+        <div className="col-md-12">
+          Home Page, width: {width}, height: {height}
+        </div>
       </div>
       <div className="group mt-3">
         <div className="row">

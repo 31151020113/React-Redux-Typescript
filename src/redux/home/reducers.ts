@@ -9,7 +9,7 @@ export interface HomeState {
 const initialState: HomeState = {
   loginReq: { userName: "", password: "" },
 };
-const reduce = (
+const reducer = (
   state = initialState,
   action: HomeDispatchActionTypes
 ): HomeState => {
@@ -32,4 +32,4 @@ const reduce = (
   }
 };
 
-export default reduce;
+export default reducer;
